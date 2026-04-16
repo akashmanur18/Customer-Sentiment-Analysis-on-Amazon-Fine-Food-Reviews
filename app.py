@@ -316,7 +316,7 @@ if selected == "Database Chatbox":
     # Sidebar config
     st.sidebar.markdown("---")
     st.sidebar.subheader("API Configuration")
-    api_key = st.sidebar.text_input("Groq API Key", type="password", value="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")
+    api_key = st.sidebar.text_input("Groq API Key", type="password", value="")
     base_url = st.sidebar.text_input("API Base URL", value="https://api.groq.com/openai/v1")
     model_name = st.sidebar.text_input("Model Name", value="llama-3.3-70b-versatile")
 

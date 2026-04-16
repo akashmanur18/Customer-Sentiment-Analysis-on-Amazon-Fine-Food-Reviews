@@ -1,168 +1,198 @@
-# E-Commerce Sales Monitoring & Performance Analysis
+# 🛒 Customer Sentiment Analysis — Amazon Fine Food Reviews
 
-## Project Overview
+A complete end-to-end data science project that performs **sentiment analysis** on Amazon Fine Food Reviews using machine learning. The pipeline covers data extraction from MySQL, preprocessing, exploratory data analysis (EDA), feature engineering, supervised and unsupervised machine learning, and visualization export.
 
-This repository contains a complete data analytics pipeline built around the Global Superstore dataset. The goal is to transform raw order-level data into a cleaned, merged dataset, analyze business performance, and create a visual dashboard with advanced charts.
+---
 
-The project is implemented in `main.py` and is designed for:
+## 📌 Project Overview
 
-- data ingestion from both CSV and Excel inputs
-- dataset merging and unification
-- data cleaning and validation
-- feature engineering for richer analysis
-- exploratory data analysis (EDA) and key performance indicator (KPI) reporting
-- database storage using SQLite (with optional MySQL support)
-- creation of a single combined visualization image
-- export of a final cleaned dataset for further use
+| Property | Details |
+|---|---|
+| **Dataset** | Amazon Fine Food Reviews |
+| **Source** | MySQL Database (`amazon_database.reviews`) |
+| **Rows** | 564,262 reviews |
+| **Columns** | 17 features |
+| **Target** | Sentiment (Positive / Neutral / Negative) |
+| **Models** | Random Forest, Gradient Boosting, K-Means, PCA |
 
-## Data Sources
+---
 
-The project uses two input files:
+## 🗂️ Project Structure
 
-- `Global_Superstore2.csv`
-- `Global_Superstore2.xlsx`
-
-Both sources contain Global Superstore sales data. The pipeline reads both files and merges them on the common key `Product Name`.
-
-### Why both CSV and Excel?
-
-- The CSV file is the primary sales dataset and provides the main order history.
-- The Excel file is loaded as an additional source to support the merge and may contain supplementary product-level details.
-
-## Full Project Workflow
-
-### 1. Read input files
-
-The script reads the CSV using `pandas.read_csv` and the Excel workbook using `pandas.read_excel`.
-
-### 2. Merge data sources
-
-The CSV and Excel files are merged on `Product Name`, keeping all CSV rows and bringing in matching Excel fields. Duplicate columns created by the merge are dropped automatically.
-
-### 3. Data cleaning and preprocessing
-
-The pipeline cleans the merged dataset with these steps:
-
-- remove exact duplicate rows
-- report and fill missing values
-- replace missing `Postal Code` values with `N/A`
-- fill numeric columns with the median value
-- fill categorical columns with the most common value (mode)
-- parse `Order Date` and `Ship Date` into proper datetime fields
-- convert `Quantity`, `Sales`, `Profit`, and `Discount` to numeric types
-- remove rows where `Sales` is not positive
-- detect outliers using the IQR method and report them without dropping them
-
-### 4. Feature engineering
-
-New analytical fields are created from the cleaned data:
-
-- `Year`, `Month`, `Month Name`, `Quarter`, `Day of Week`
-- `Ship Days` and `Delivery Speed`
-- `Profit Margin %`
-- `Revenue per Unit`
-- `Discount %` and discount range category (`Disc Category`)
-- `Profit Status` (`Profit` / `Loss`)
-- label encoded codes for categorical fields used in correlation analysis
-
-### 5. Exploratory data analysis (EDA)
-
-The script computes and prints:
-
-- descriptive statistics for financial and shipping metrics
-- business KPIs such as total sales, total profit, average profit margin, average discount, average ship days, and loss-making orders
-- grouped summaries by category, region, country, and segment
-- a correlation matrix for numeric features
-
-### 6. Database integration
-
-The default pipeline saves the cleaned dataset into an SQLite database at `outputs/global_superstore.db`.
-
-It also supports optional MySQL integration by setting `USE_MYSQL = True` and providing connection credentials in `main.py`.
-
-### 7. Visualization dashboard
-
-The project generates a combined dashboard image containing 12 advanced plots. The dashboard is saved as:
-
-- `outputs/ecommerce_dashboard_visualizations.png`
-
-The visualization set includes:
-
-- Monthly sales trend by year
-- Sales vs profit by category
-- Regional profit heatmap
-- Discount vs profit margin scatter
-- Yearly profit by segment
-- Sub-category profit/loss analysis
-- Shipping mode sales share donut chart
-- Quarterly sales area trend
-- Profit margin distribution by category
-- Correlation heatmap for numeric features
-- Top 10 sub-categories by sales lollipop plot
-- Market-wise profit distribution box plot
-
-### 8. Export final cleaned dataset
-
-After cleaning and feature engineering, the final unified dataset is saved as:
-
-- `outputs/Global_Superstore_Final_Cleaned.csv`
-
-This final CSV is saved using `utf-8-sig` for Excel compatibility.
-
-## Installation
-
-Install the required Python packages:
-
-```bash
-pip install pandas matplotlib seaborn scipy scikit-learn sqlalchemy mysql-connector-python openpyxl xlrd
+```
+Project_2/
+│
+├── code.py                              # Main pipeline script
+├── Amazon_Fine_Food_Reviews_Cleaned.csv # Output: Cleaned dataset
+├── EDA_Visualizations.pdf              # Output: All EDA plots
+└── README.md                           # Project documentation
 ```
 
-## Usage
+---
 
-Run the project with:
+## ⚙️ Prerequisites
+
+### Python Version
+- Python 3.8+
+
+### Required Libraries
+
+Install all dependencies using:
 
 ```bash
-python main.py
+pip install pandas numpy matplotlib seaborn scikit-learn mysql-connector-python wordcloud plotly
 ```
 
-If you want to use MySQL instead of SQLite:
+| Library | Purpose |
+|---|---|
+| `pandas` | Data manipulation |
+| `numpy` | Numerical operations |
+| `matplotlib` | Plotting |
+| `seaborn` | Statistical visualizations |
+| `scikit-learn` | Machine learning models |
+| `mysql-connector-python` | MySQL database connection |
+| `wordcloud` | Word cloud visualization *(optional)* |
+| `plotly` | Interactive charts *(optional)* |
 
-1. open `main.py`
-2. set `USE_MYSQL = True`
-3. update `DB_USER`, `DB_PASSWORD`, `DB_HOST`, `DB_PORT`, and `DB_NAME`
+---
 
-## Project Outputs
+## 🗄️ Database Setup
 
-The pipeline generates these output files:
+The script connects to a **local MySQL database**. Make sure you have:
 
-- `outputs/ecommerce_dashboard_visualizations.png`
-- `outputs/Global_Superstore_Final_Cleaned.csv`
-- `outputs/global_superstore.db`
+1. MySQL Server running locally
+2. A database named `amazon_database`
+3. A table named `reviews` containing the Amazon Fine Food Reviews dataset
 
-## Visualizations
+Update the credentials in `code.py` if needed:
 
-A combined dashboard image is created and saved to `outputs/ecommerce_dashboard_visualizations.png`.
+```python
+connection = mysql.connector.connect(
+    host="localhost",
+    user="root",
+    passwd="your_password",      # ← update this
+    database="amazon_database"
+)
+```
 
-### Dashboard features
+> ⚠️ **Security Note:** Avoid hardcoding credentials. Use environment variables or a `.env` file for production use.
 
-The dashboard helps answer business questions such as:
+---
 
-- which months have the highest sales trend?
-- which categories generate the most revenue and profit?
-- which regions and markets are most profitable?
-- how does discount affect profit margin?
-- which product sub-categories are loss-making?
+## 🚀 How to Run
 
-### Preview
+```bash
+cd Project_2
+python code.py
+```
 
-![Dashboard Preview](./outputs/ecommerce_dashboard_visualizations.png)
+The script will run all 10 pipeline sections automatically and print progress to the console.
 
-## Notes
+---
 
-- Merge logic is based on `Product Name`, so product naming consistency matters.
-- The analysis keeps outliers for completeness, while still flagging them.
-- The final CSV is exported with Excel-friendly encoding.
+## 🔬 Pipeline Sections
 
-## Author
+### 1. 📥 Data Loading
+- Connects to MySQL and loads all reviews into a Pandas DataFrame.
 
-Akash Manur | Data Analyst
+### 2. 🔍 Initial Data Exploration
+- Displays shape, data types, summary statistics, and missing value analysis.
+
+### 3. 🧹 Data Preprocessing
+- Fills missing `ProfileName` and `Summary` values.
+- Removes duplicate reviews based on `UserId`, `ProductId`, and `Time`.
+- Identifies categorical and numerical columns.
+
+### 4. 🔧 Data Cleaning
+- Converts `Time` column from date strings to `datetime` objects.
+- Detects and caps outliers in `HelpfulnessNumerator` and `HelpfulnessDenominator` using the IQR method.
+- Removes rows with invalid `Score` values (outside 1–5 range).
+- Removes rows where `HelpfulnessNumerator > HelpfulnessDenominator`.
+
+### 5. 🏗️ Feature Engineering
+| New Feature | Description |
+|---|---|
+| `Sentiment` | Positive (Score > 3), Neutral (Score = 3), Negative (Score < 3) |
+| `ReviewLength` | Character count of the review text |
+| `HelpfulnessRatio` | `HelpfulnessNumerator / HelpfulnessDenominator` |
+| `ReviewYear` | Extracted year from `Time` |
+| `ReviewMonth` | Extracted month from `Time` |
+| `ReviewDay` | Extracted day from `Time` |
+| `ReviewDayOfWeek` | Day of week (0=Monday, 6=Sunday) |
+
+### 6. 📊 Exploratory Data Analysis (15 Visualizations)
+All charts are saved to `EDA_Visualizations.pdf`:
+
+1. Score Distribution
+2. Sentiment Distribution
+3. Correlation Heatmap
+4. Review Length Distribution
+5. Helpfulness Ratio Distribution
+6. Boxplot — Review Length vs Score
+7. Violin Plot — Helpfulness Ratio vs Sentiment
+8. Pairplot of Key Features
+9. Reviews Per Year (Line Chart)
+10. Reviews by Month (Bar Chart)
+11. Scatter — Helpfulness vs Review Length
+12. Top 10 Most Reviewed Products
+13. Average Score Trend Over Years
+14. Word Cloud of Review Text *(requires `wordcloud`)*
+15. Sunburst Chart — Sentiment by Year *(requires `plotly`)*
+
+### 7. 🤖 Machine Learning Models
+
+#### A. Supervised Learning — Sentiment Classification
+- **Features used:** `HelpfulnessRatio`, `ReviewLength`, `Score`
+- **Train/Test Split:** 80/20 with stratification
+- **Scaling:** StandardScaler
+
+| Model | Accuracy |
+|---|---|
+| Random Forest Classifier | 100% |
+| Gradient Boosting Classifier | 100% |
+
+#### B. Unsupervised Learning — Clustering
+- **K-Means Clustering** — 3 clusters (positive, neutral, negative)
+- **PCA** — Reduced to 2 components for visualization
+  - PC1 explains ~38.6% variance
+  - PC2 explains ~33.3% variance
+
+### 8. 💾 Output Files
+- `Amazon_Fine_Food_Reviews_Cleaned.csv` — Fully cleaned and feature-engineered dataset
+- `EDA_Visualizations.pdf` — All EDA and ML visualizations
+
+---
+
+## 📈 Results Summary
+
+| Metric | Value |
+|---|---|
+| Total Reviews Processed | 564,262 |
+| Features Engineered | 7 new features |
+| Visualizations Generated | 15 charts |
+| Random Forest Accuracy | 100% |
+| Gradient Boosting Accuracy | 100% |
+| PCA Explained Variance | ~71.9% (2 components) |
+
+---
+
+## 📝 Notes
+
+- The ML models achieve 100% accuracy because `Score` is used as a direct feature, and `Sentiment` is derived entirely from `Score`. This is intentional for demonstrating pipeline structure. In real-world NLP applications, `Text` would be vectorized (e.g., TF-IDF, BERT) instead.
+- Word Cloud and Plotly Sunburst are optional and will be skipped gracefully if libraries are not installed.
+- The script samples **50,000 rows** for ML model training to ensure reasonable runtime.
+
+---
+
+## 👤 Author
+
+**Akash**
+- Project: Customer Sentiment Analysis — Amazon Fine Food Reviews
+- Language: Python
+- Tools: MySQL, Pandas, Scikit-learn, Seaborn, Matplotlib
+
+---
+
+## 📄 License
+
+This project is for educational and portfolio purposes.

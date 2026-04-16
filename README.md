@@ -176,6 +176,77 @@ All charts are saved to `EDA_Visualizations.pdf`:
 
 ---
 
+## 📂 Dataset Download
+
+> 🔗 Replace the link below with your actual CSV file URL (e.g., Google Drive, GitHub Releases, Kaggle, etc.)
+
+| File | Description | Link |
+|---|---|---|
+| `Amazon_Fine_Food_Reviews_Cleaned.csv` | Cleaned & feature-engineered dataset (564K rows) | [⬇️ Download CSV](#) |
+
+<!-- 
+  HOW TO ADD YOUR CSV LINK:
+  1. Upload your CSV to Google Drive / GitHub Releases / Kaggle
+  2. Copy the shareable link
+  3. Replace the (#) above with your actual link, e.g.:
+     [⬇️ Download CSV](https://drive.google.com/your-link-here)
+-->
+
+---
+
+## 📊 EDA Visualizations
+
+> 🔗 Replace the link below with your actual PDF file URL (e.g., Google Drive, GitHub, etc.)
+
+| File | Description | Link |
+|---|---|---|
+| `EDA_Visualizations.pdf` | All 15 EDA + ML charts exported as PDF | [📄 View Visualizations](#) |
+
+<!-- 
+  HOW TO ADD YOUR PDF LINK:
+  1. Upload EDA_Visualizations.pdf to Google Drive or GitHub
+  2. Copy the shareable/raw link
+  3. Replace the (#) above with your actual link, e.g.:
+     [📄 View Visualizations](https://drive.google.com/your-pdf-link-here)
+-->
+
+### Preview — Sample Charts
+
+> 🖼️ Add individual chart screenshots below. Upload images to an `images/` folder in your repo, then update the paths.
+
+| Score Distribution | Sentiment Distribution | Correlation Heatmap |
+|---|---|---|
+| ![Score Distribution](images/score_distribution.png) | ![Sentiment Distribution](images/sentiment_distribution.png) | ![Heatmap](images/correlation_heatmap.png) |
+
+<!--
+  HOW TO ADD CHART IMAGES:
+  1. Take screenshots of your charts from the PDF
+  2. Save them inside a folder: Project_2/images/
+  3. Update the filenames above to match your actual image names
+  Example:
+    ![Score Distribution](images/score_dist.png)
+-->
+
+---
+
+## 🖥️ Dashboard Preview
+
+> 🖼️ Add a screenshot of your Streamlit dashboard or any interactive dashboard below.
+
+![Dashboard Preview](images/dashboard.png)
+
+<!--
+  HOW TO ADD YOUR DASHBOARD IMAGE:
+  1. Take a full screenshot of your dashboard
+  2. Save it as: Project_2/images/dashboard.png
+  3. The image will automatically appear above once uploaded to GitHub
+  
+  You can also embed a live demo link like:
+  👉 [Live Dashboard](https://your-streamlit-app.streamlit.app)
+-->
+
+---
+
 ## 📝 Notes
 
 - The ML models achieve 100% accuracy because `Score` is used as a direct feature, and `Sentiment` is derived entirely from `Score`. This is intentional for demonstrating pipeline structure. In real-world NLP applications, `Text` would be vectorized (e.g., TF-IDF, BERT) instead.

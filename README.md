@@ -182,7 +182,7 @@ All charts are saved to `EDA_Visualizations.pdf`:
 
 | File | Description | Link |
 |---|---|---|
-| `Amazon_Fine_Food_Reviews_Cleaned.csv` | Cleaned & feature-engineered dataset (564K rows) | [⬇️ Download CSV](#) |
+| `Amazon_Fine_Food_Reviews_Cleaned.csv` | Cleaned & feature-engineered dataset (564K rows) | <https://www.kaggle.com/datasets/snap/amazon-fine-food-reviews> |
 
 <!-- 
   HOW TO ADD YOUR CSV LINK:

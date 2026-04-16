@@ -1,0 +1,74 @@
+
+/* General Body and Main Container */
+.stApp {
+    background-color: #f0f2f6;
+    color: #333;
+}
+
+/* Sidebar Styling */
+.css-1d391kg {
+    background-color: #ffffff;
+    border-right: 1px solid #e6e6e6;
+}
+
+.css-1d391kg .st-emotion-cache-16txtl3 {
+    font-size: 24px;
+    color: #1a73e8;
+    font-weight: 600;
+}
+
+/* Option Menu in Sidebar */
+.css-1d391kg .st-emotion-cache-h4xj13 {
+    font-size: 16px;
+}
+.css-1d391kg .st-emotion-cache-h4xj13:hover {
+    background-color: #e8f0fe;
+    color: #1967d2;
+}
+
+/* Main Content Headers */
+h1 {
+    color: #1a73e8;
+    font-weight: 600;
+    font-size: 2.5rem;
+    border-bottom: 2px solid #1a73e8;
+    padding-bottom: 10px;
+}
+
+h2, h3 {
+    color: #1e88e5;
+    font-weight: 500;
+}
+
+/* Streamlit Metrics */
+.st-emotion-cache-1g8s42a {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-left: 5px solid #1a73e8;
+}
+
+.st-emotion-cache-1g8s42a .st-emotion-cache-1gf2j5y {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.st-emotion-cache-1g8s42a .st-emotion-cache-1xarl3l {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Dataframe styling */
+.stDataFrame {
+    border: 1px solid #e6e6e6;
+    border-radius: 10px;
+}
+
+/* Plotly Chart Styling */
+.plotly-chart {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}

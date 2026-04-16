@@ -271,3 +271,61 @@ Dashboard_image = <<img width="800" height="455" alt="Screanshot" src="https://g
 ## 📄 License
 
 This project is for educational and portfolio purposes.
+
+## Streamlit Dashboard 
+
+Project_2/
+│
+├── images/
+│   ├── home_dashboard.png
+│   ├── data_explorer.png
+│   ├── sentiment_deep_dive.png
+│   ├── review_insights.png
+│   ├── product_deep_dive.png
+│   ├── analyze_text.png
+│   ├── database_chatbox.png
+
+---
+
+## 🖥️ Streamlit Dashboard Preview
+
+Below are screenshots of the interactive Streamlit application used for analyzing customer sentiment:
+
+### 🏠 Home Dashboard
+<<img width="1916" height="862" alt="Streamlit1" src="https://github.com/user-attachments/assets/56e564b7-b049-4c40-a78e-58bf0802658f" />
+>
+
+### 📊 Data Explorer
+<img width="1917" height="747" alt="Streamlit2" src="https://github.com/user-attachments/assets/8d4e0d38-7679-4831-ae35-2b94b1af2e0e" />
+<img width="1910" height="814" alt="Streamlit3" src="https://github.com/user-attachments/assets/82c642ab-e029-477d-a9d4-c2a40cdc62c5" />
+
+### 📈 Sentiment Deep Dive
+<img width="1910" height="804" alt="Streamlit4" src="https://github.com/user-attachments/assets/eaaa68f1-eec8-4c41-a20f-e6db46b9e232" />
+
+
+### 🔍 Review Insights (Word Cloud)
+<img width="1917" height="808" alt="Streamlit5" src="https://github.com/user-attachments/assets/ec4f3d49-f285-40ed-b170-6412df5e67c5" />
+<img width="1916" height="802" alt="Streamlit6" src="https://github.com/user-attachments/assets/68df88b7-fb07-47e8-97dd-a7a00a193c64" />
+
+
+### 📦 Product Deep Dive
+<img width="1910" height="756" alt="Streamlit7" src="https://github.com/user-attachments/assets/371df216-13c3-4708-b9c1-cb07b591bab0" />
+<img width="1917" height="777" alt="Streamlit8" src="https://github.com/user-attachments/assets/7bf1e966-6c17-4858-a204-829a99e3c966" />
+
+
+### ✍️ Analyze Custom Text
+<img width="1914" height="798" alt="Streamlit9" src="https://github.com/user-attachments/assets/7176c02d-fb3f-47e6-a45b-ee7469c76f72" />
+
+
+### 💬 Database Chatbox (SQL + NLP)
+<img width="1864" height="890" alt="Streamlit10" src="https://github.com/user-attachments/assets/eee53ee0-e331-4f2e-877f-b6e9e3b7e806" />
+
+
+---
+
+👉 This Streamlit app enables:
+- Real-time sentiment analysis
+- Interactive filtering and visualization
+- SQL-powered chatbot for querying data
+- Product-level deep insights
+- Custom text sentiment prediction

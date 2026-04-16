@@ -214,12 +214,10 @@ All charts are saved to `EDA_Visualizations.pdf`:
 
 > 🖼️ Add individual chart screenshots below. Upload images to an `images/` folder in your repo, then update the paths.
 
-| Score Distribution | Sentiment Distribution | Correlation Heatmap |
-|---|---|---|
-|<<img width="1006" height="602" alt="Score_distrubtion" src="https://github.com/user-attachments/assets/a3dc5f66-fbba-4d34-8f62-ec8e90b896da" />
->|<<img width="1004" height="598" alt="Sentiment_Distrubtion" src="https://github.com/user-attachments/assets/308dbf59-5530-4340-9312-520bcd07d17c" />
->|<<img width="1208" height="797" alt="Corelation_Heat_Map" src="https://github.com/user-attachments/assets/f362efcc-4710-4676-98c6-02416ad516a7" />
->|
+Score Distribution =
+<img width="1006" height="602" alt="Score_distrubtion" src="https://github.com/user-attachments/assets/a3dc5f66-fbba-4d34-8f62-ec8e90b896da" />
+Sentiment Distribution =<img width="1004" height="598" alt="Sentiment_Distrubtion" src="https://github.com/user-attachments/assets/308dbf59-5530-4340-9312-520bcd07d17c" />
+Correlation Heatmap = <img width="1208" height="797" alt="Corelation_Heat_Map" src="https://github.com/user-attachments/assets/f362efcc-4710-4676-98c6-02416ad516a7" />
 
 <!--
   HOW TO ADD CHART IMAGES:

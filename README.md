@@ -200,7 +200,7 @@ All charts are saved to `EDA_Visualizations.pdf`:
 
 | File | Description | Link |
 |---|---|---|
-| `EDA_Visualizations.pdf` | All 15 EDA + ML charts exported as PDF | [📄 View Visualizations](#) |
+| `EDA_Visualizations.pdf` | All 15 EDA + ML charts exported as PDF | <https://github.com/akashmanur18/Customer-Sentiment-Analysis-on-Amazon-Fine-Food-Reviews/blob/main/EDA_Visualizations.pdf> |
 
 <!-- 
   HOW TO ADD YOUR PDF LINK:
@@ -216,7 +216,10 @@ All charts are saved to `EDA_Visualizations.pdf`:
 
 | Score Distribution | Sentiment Distribution | Correlation Heatmap |
 |---|---|---|
-| ![Score Distribution](images/score_distribution.png) | ![Sentiment Distribution](images/sentiment_distribution.png) | ![Heatmap](images/correlation_heatmap.png) |
+|<<img width="1006" height="602" alt="Score_distrubtion" src="https://github.com/user-attachments/assets/a3dc5f66-fbba-4d34-8f62-ec8e90b896da" />
+>|<<img width="1004" height="598" alt="Sentiment_Distrubtion" src="https://github.com/user-attachments/assets/308dbf59-5530-4340-9312-520bcd07d17c" />
+>|<<img width="1208" height="797" alt="Corelation_Heat_Map" src="https://github.com/user-attachments/assets/f362efcc-4710-4676-98c6-02416ad516a7" />
+>|
 
 <!--
   HOW TO ADD CHART IMAGES:
@@ -234,6 +237,9 @@ All charts are saved to `EDA_Visualizations.pdf`:
 > 🖼️ Add a screenshot of your Streamlit dashboard or any interactive dashboard below.
 
 ![Dashboard Preview](images/dashboard.png)
+
+Dashboard_image = <<img width="800" height="455" alt="Screanshot" src="https://github.com/user-attachments/assets/132d7c68-9d6b-4377-b73f-ac0fc4648573" />
+>
 
 <!--
   HOW TO ADD YOUR DASHBOARD IMAGE:
